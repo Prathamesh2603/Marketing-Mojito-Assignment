@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { ExpenseForm } from "./components/ExpenseForm"
 import { ExpenseList } from "./components/ExpenseList"
+import { ExpenseSummary } from "./components/ExpenseSummary";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
@@ -33,6 +34,9 @@ const App = () => {
 
       {/* Expense List */}
       <ExpenseList expenses={expenses} setExpenses={setExpenses} />
+
+      {/* Expense Summary Panel */}
+      <ExpenseSummary expenses={expenses} />
 
     </div>
   )

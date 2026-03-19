@@ -12,9 +12,8 @@ export const ExpenseForm = ({ setExpenses }) => {
     {value: "Utilities", label: "Utilities"},
     {value: "Food", label: "Food"},
     {value: "Travel", label: "Travel"},
-    {value: "Shopping & Entertainment", label: "Shopping & Entertainment"},
-    {value: "Saving & Investments", label: "Saving & Investments"},
-    {value: "Debt Payments", label: "Debt Payments"}
+    {value: "Bank", label: "Bank"},
+    {value: "Other", label: "Other"},
   ];
 
   // localStorage.clear();
