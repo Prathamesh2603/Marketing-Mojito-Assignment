@@ -4,13 +4,13 @@ export const ExpenseList = ({ expenses, setExpenses }) => {
     setExpenses(prev => prev.filter(exp => exp.id !== id));
   };
   return (
-    <div className="border rounded-lg px-4 py-6">
+    <div className="border rounded-lg px-4 py-6 bg-blue-50">
 
       <div className="flex justify-between items-start">
         <h2 className="text-xl font-medium mb-5 tracking-wide">
           Expenses
         </h2>
-        <p>{expenses.length} entries</p>
+        <p className="text-blue-700">{expenses.length} entries</p>
       </div>
 
       {expenses.length === 0 ? (

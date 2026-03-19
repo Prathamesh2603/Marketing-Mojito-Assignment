@@ -37,7 +37,7 @@ export const ExpenseForm = ({ setExpenses }) => {
   }
 
   return (
-    <div className="border rounded-lg px-4 py-6">
+    <div className="border rounded-lg px-4 py-6 bg-blue-50">
 
       {/* Heading */}
       <h2 className="text-xl text-center font-medium mb-5 tracking-wide">
@@ -91,7 +91,7 @@ export const ExpenseForm = ({ setExpenses }) => {
         </div>
 
         {/* Add Expense Button */}
-        <button className="bg-blue-700 w-full rounded-lg py-3 font-medium border-none outline-none active:bg-blue-500 cursor-pointer">
+        <button className="bg-blue-700 w-full rounded-lg py-3 text-white font-medium border-none outline-none active:bg-blue-500 cursor-pointer">
           Add Expense
         </button>
         

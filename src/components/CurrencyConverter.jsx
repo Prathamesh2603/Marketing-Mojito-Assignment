@@ -18,6 +18,7 @@ export const CurrencyConverter = ({ totalAmount }) => {
     "HUF",
     "IDR",
     "ILS",
+    "USD",
     "ISK",
     "JPY",
     "KRW",
@@ -46,7 +47,7 @@ export const CurrencyConverter = ({ totalAmount }) => {
   const convertedAmount = (totalAmount * rate).toFixed(2);
 
   return (
-    <div className="border rounded-lg px-4 py-6 space-y-4">
+    <div className="border rounded-lg px-4 py-6 space-y-4 bg-blue-50">
 
       <h2 className="text-xl font-medium">Currency Conversion</h2>
 

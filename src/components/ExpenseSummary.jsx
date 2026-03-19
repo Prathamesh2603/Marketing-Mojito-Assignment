@@ -23,7 +23,7 @@ export const ExpenseSummary = ({ expenses }) => {
     : "N/A";
 
   return (
-    <div className="border rounded-lg px-4 py-6 space-y-4">
+    <div className="border rounded-lg px-4 py-6 space-y-4 bg-blue-50">
 
       <h2 className="text-xl font-medium tracking-wide text-center">
         Summary

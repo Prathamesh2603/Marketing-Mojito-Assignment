@@ -7,10 +7,3 @@
   --font-roboto: "Roboto", sans-serif;
 
 }
-
-@layer base {
-  body {
-    background-color: black;
-    color: white;
-  }
-}

@@ -17,15 +17,15 @@ const App = () => {
   }, [expenses]);
 
   return (
-    <div className="px-4 py-2 space-y-6.5">
+    <div className="px-4 py-6 space-y-6.5 max-w-2xl mx-auto">
       
       {/* Header */}
-      <div className="border-b space-y-1 text-center py-5">
+      <div className="border-b space-y-1 text-center">
         <h1 className="text-4xl font-poppins tracking-wide">
           Expense 
           <span className="text-blue-500 font-medium"> Tracker</span>
         </h1>
-        <p className="font-roboto tracking-wide">
+        <p className="font-roboto tracking-wide pb-5">
           Personal Finance
         </p>
       </div>
