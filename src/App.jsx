@@ -17,7 +17,7 @@ const App = () => {
   }, [expenses]);
 
   return (
-    <div className="px-4 py-6 space-y-6.5 max-w-2xl mx-auto">
+    <div className="px-4 py-6 space-y-6.5 max-w-xl mx-auto">
       
       {/* Header */}
       <div className="border-b space-y-1 text-center">

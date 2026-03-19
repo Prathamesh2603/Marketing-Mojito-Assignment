@@ -18,7 +18,7 @@ export const ExpenseList = ({ expenses, setExpenses }) => {
           No expenses yet. Add your first one above.
         </div>
       ) : (
-        <div className="space-y-3">
+        <div className="space-y-3 sm:grid sm:grid-cols-2 sm:gap-4">
           {expenses.map((exp) => (
             <div key={exp.id} className="border rounded-lg flex justify-between items-center py-3 px-5">
               

@@ -47,7 +47,7 @@ export const ExpenseForm = ({ setExpenses }) => {
       <form onSubmit={handleSubmit}>
 
         {/* Input User Expenses */}
-        <div className="space-y-3.5">
+        <div className="space-y-3.5 sm:grid sm:grid-cols-2 sm:gap-4">
           <div className="space-y-1">
             <p className="text-sm">EXPENSE NAME</p>
             <input 
