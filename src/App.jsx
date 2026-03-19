@@ -1,6 +1,8 @@
+import { ExpenseForm } from "./components/ExpenseForm"
+
 const App = () => {
   return (
-    <div className="px-4 py-2">
+    <div className="px-4 py-2 space-y-6.5">
       
       {/* Header */}
       <div className="border-b space-y-1 text-center py-5">
@@ -14,7 +16,7 @@ const App = () => {
       </div>
 
       {/* Add User Expenses */}
-      
+      <ExpenseForm />
 
     </div>
   )
