@@ -1,7 +1,19 @@
+import { useEffect, useState } from "react"
 import { ExpenseForm } from "./components/ExpenseForm"
 import { ExpenseList } from "./components/ExpenseList"
 
 const App = () => {
+  const [expenses, setExpenses] = useState([]);
+
+  useEffect(() => {
+    const storedExpenses = JSON.parse(localStorage.getItem("expenseList")) || [];
+    setExpenses(storedExpenses);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("expenseList", JSON.stringify(expenses));
+  }, [expenses]);
+
   return (
     <div className="px-4 py-2 space-y-6.5">
       
@@ -17,10 +29,10 @@ const App = () => {
       </div>
 
       {/* Add User Expenses */}
-      <ExpenseForm />
+      <ExpenseForm setExpenses={setExpenses} />
 
       {/* Expense List */}
-      <ExpenseList />
+      <ExpenseList expenses={expenses} setExpenses={setExpenses} />
 
     </div>
   )

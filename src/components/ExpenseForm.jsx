@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const ExpenseForm = () => {
+export const ExpenseForm = ({ setExpenses }) => {
   const [userExpense, setUserExpense] = useState({
     expenseName: "",
     expenseAmt: "",
@@ -17,12 +17,23 @@ export const ExpenseForm = () => {
     {value: "Debt Payments", label: "Debt Payments"}
   ];
 
+  // localStorage.clear();
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const newExpense = {
+      id: Date.now(),
+      expenseName: userExpense.expenseName.trim(),
+      expenseAmt: Number(userExpense.expenseAmt),
+      expenseCat: userExpense.expenseCat
+    };
+
+    setExpenses(prev => [...prev, newExpense]);
+
     setUserExpense({
       expenseName: "",
-      expenseAmt: ""
+      expenseAmt: "",
+      expenseCat: ""
     });
   }
 
@@ -52,7 +63,7 @@ export const ExpenseForm = () => {
           <div className="space-y-1">
             <p className="text-sm">AMOUNT (INR)</p>
             <input 
-              type="text" 
+              type="number" 
               placeholder="0"
               required
               value={userExpense.expenseAmt}
@@ -68,10 +79,12 @@ export const ExpenseForm = () => {
           <select 
             className="w-full py-2 outline-none"
             value={userExpense.expenseCat}
+            required
             onChange={(e) => setUserExpense({
               ...userExpense, expenseCat: e.target.value
             })}
           >
+            <option value="">Select Category</option>
             {expCategoryList.map((list,id) => (
               <option key={id} value={list.value}>{list.label}</option>
             ))}
