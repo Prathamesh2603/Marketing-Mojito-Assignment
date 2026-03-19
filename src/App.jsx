@@ -1,6 +1,22 @@
 const App = () => {
   return (
-    <div>App</div>
+    <div className="px-4 py-2">
+      
+      {/* Header */}
+      <div className="border-b space-y-1 text-center py-5">
+        <h1 className="text-4xl font-poppins tracking-wide">
+          Expense 
+          <span className="text-blue-500 font-medium"> Tracker</span>
+        </h1>
+        <p className="font-roboto tracking-wide">
+          Personal Finance
+        </p>
+      </div>
+
+      {/* Add User Expenses */}
+      
+
+    </div>
   )
 }
 
