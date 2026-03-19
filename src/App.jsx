@@ -1,4 +1,5 @@
 import { ExpenseForm } from "./components/ExpenseForm"
+import { ExpenseList } from "./components/ExpenseList"
 
 const App = () => {
   return (
@@ -17,6 +18,9 @@ const App = () => {
 
       {/* Add User Expenses */}
       <ExpenseForm />
+
+      {/* Expense List */}
+      <ExpenseList />
 
     </div>
   )
