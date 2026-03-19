@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { ExpenseForm } from "./components/ExpenseForm"
 import { ExpenseList } from "./components/ExpenseList"
 import { ExpenseSummary } from "./components/ExpenseSummary";
+import { CurrencyConverter } from "./components/CurrencyConverter";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
@@ -37,6 +38,9 @@ const App = () => {
 
       {/* Expense Summary Panel */}
       <ExpenseSummary expenses={expenses} />
+
+      {/* Currency Converter */}
+      <CurrencyConverter totalAmount={expenses.reduce((sum, exp) => sum + exp.expenseAmt, 0)} />
 
     </div>
   )
