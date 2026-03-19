@@ -1,5 +1,90 @@
+import { useState } from "react";
+
 export const ExpenseForm = () => {
+  const [userExpense, setUserExpense] = useState({
+    expenseName: "",
+    expenseAmt: "",
+    expenseCat: ""
+  });
+
+  const expCategoryList = [
+    {value: "Housing", label: "Housing"},
+    {value: "Utilities", label: "Utilities"},
+    {value: "Food", label: "Food"},
+    {value: "Travel", label: "Travel"},
+    {value: "Shopping & Entertainment", label: "Shopping & Entertainment"},
+    {value: "Saving & Investments", label: "Saving & Investments"},
+    {value: "Debt Payments", label: "Debt Payments"}
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setUserExpense({
+      expenseName: "",
+      expenseAmt: ""
+    });
+  }
+
   return (
-    <div>ExpenseForm</div>
+    <div className="border rounded-lg px-4 py-6">
+
+      {/* Heading */}
+      <h2 className="text-xl text-center font-medium mb-5 tracking-wide">
+        Add Expense
+      </h2>
+
+      <form onSubmit={handleSubmit}>
+
+        {/* Input User Expenses */}
+        <div className="space-y-3.5">
+          <div className="space-y-1">
+            <p className="text-sm">EXPENSE NAME</p>
+            <input 
+              type="text" 
+              placeholder="eg. Team Lunch"
+              required
+              value={userExpense.expenseName}
+              onChange={(e) => setUserExpense({ ...userExpense, expenseName: e.target.value})}
+              className="border py-2 px-3 rounded-lg w-full outline-none"
+            />
+          </div>
+          <div className="space-y-1">
+            <p className="text-sm">AMOUNT (INR)</p>
+            <input 
+              type="text" 
+              placeholder="0"
+              required
+              value={userExpense.expenseAmt}
+              onChange={(e) => setUserExpense({ ...userExpense, expenseAmt: e.target.value})}
+              className="border py-2 px-3 rounded-lg w-full outline-none"
+            />
+          </div>
+        </div>
+
+        {/* Expense Category */}
+        <div className="space-y-1 my-4">
+          <p className="text-sm">CATEGORY: </p>
+          <select 
+            className="w-full py-2 outline-none"
+            value={userExpense.expenseCat}
+            onChange={(e) => setUserExpense({
+              ...userExpense, expenseCat: e.target.value
+            })}
+          >
+            {expCategoryList.map((list,id) => (
+              <option key={id} value={list.value}>{list.label}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* Add Expense Button */}
+        <button className="bg-blue-700 w-full rounded-lg py-3 font-medium border-none outline-none active:bg-blue-500 cursor-pointer">
+          Add Expense
+        </button>
+        
+      </form>
+
+    </div>
   )
 }
